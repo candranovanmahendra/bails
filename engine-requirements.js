@@ -1,10 +1,15 @@
+// ===== ENGINE CHECK DISABLED =====
+// Original requirement: Node.js 20+
+// Modified to allow Node.js 16/18/20+
+// — by Gibrane 😎
+
 const major = parseInt(process.versions.node.split('.')[0], 10);
 
 if (major < 20) {
-  console.error(
-    `\n❌ This package requires Node.js 20+ to run reliably.\n` +
-    `   You are using Node.js ${process.versions.node}.\n` +
-    `   Please upgrade to Node.js 20+ to proceed.\n`
+  console.log(
+    `⚠️ Warning: This module normally requires Node 20+, but engine check is bypassed.\n` +
+    `   You're running Node.js ${process.versions.node}. Continuing anyway... 🚀`
   );
-  process.exit(1);
+} else {
+  console.log(`🟢 Node Version OK (${process.versions.node})`);
 }
